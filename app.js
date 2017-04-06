@@ -2,6 +2,8 @@ var BasicCard = require("./BasicCard.js");
 
 var ClozeCard = require("./ClozeCard.js");
 
+var appendCards = require("fs");
+
 var flashCard1 = process.argv[2];
 
 var flashCard2 = process.argv[3];
@@ -21,10 +23,21 @@ if(newClozeCard.printError === true){
 	console.log("Cloze Card " + "\nOops! " + flashCard2 + " doesn't appear in " + flashCard1 + ".");
 }
 
-// if(match === false){
-// 	console.log("Cloze Card " + "\nOops, Wrong Answer! Try again.");
-// }
+var appendFront = "Basic Card " + "\nFront: " + newBasicCard.printFront;
+var appendBack = "Back: " + newBasicCard.printBack + "\n";
+var appendCloze = "Cloze Card " + "\nCloze: " + newClozeCard.printCloze;
+var appendPartial = "Partial: " + newClozeCard.printPartial;
+var appendFullText = "Full Text: " + newClozeCard.printFullText;
 
+appendCards.appendFile("Cards.txt", appendFront + "\n" + appendBack + "\n" + appendCloze + "\n" + appendPartial + "\n" + appendFullText, function(error){
+	if(error){
+		console.log(error)
+	}else{
+		console.log("\nFlashcards created!");
+	}
+});
+
+//Below is the code I originally had for this assignment but then I refactored it to the above :)
 
 // var flashCard1 = process.argv[2];
 

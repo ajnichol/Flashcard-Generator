@@ -1,0 +1,8 @@
+Basic Card 
+Front: alex likes node.js
+Back: node.js
+
+Cloze Card 
+Cloze: node.js
+Partial: alex likes ...
+Full Text: alex likes node.js
