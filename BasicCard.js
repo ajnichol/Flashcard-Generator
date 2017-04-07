@@ -1,5 +1,5 @@
 
-
+//basic card constructor
 function BasicCard(front, back){
 	this.front = front;
 	this.back = back;
@@ -10,5 +10,5 @@ function BasicCard(front, back){
 
 }
 
-
+//exporting our basic card constructor for use on app.js
 module.exports = BasicCard;
